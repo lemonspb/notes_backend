@@ -8,8 +8,8 @@ import cors from "cors";
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use("/note", note);
-app.use("/auth", auth);
+// app.use("/note", note);
+// app.use("/auth", auth);
 
 void (async () => {
   console.log("Starting mongo");
@@ -17,3 +17,7 @@ void (async () => {
   console.log("Mongo connected");
   await app.listen(process.env.PORT, () => {});
 })();
+
+app.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});
