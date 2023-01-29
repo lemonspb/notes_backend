@@ -1,8 +1,7 @@
 // import { app } from "../helpers/runApp.js";
-import runMongo from "../helpers/mongo.js";
-import note from "../routes/notes.routes";
 import express from "express";
-
+import runMongo from "../helpers/mongo.js";
+import note from "../routes/notes.routes.js";
 import auth from "../routes/auth.routes.js";
 import cors from "cors";
 
