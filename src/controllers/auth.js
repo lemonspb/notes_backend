@@ -50,13 +50,18 @@ const verificate = async (req, res) => {
 
 const login = async (req, res, next) => {
   try {
-    const { email } = req.body;
+    const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (!user) {
-      return next(
-        createError(404, "There is no user with this email address!")
-      );
+      return next(createError(404, "Error email"));
     }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(404).json({ message: "Erorr password" });
+    }
+
     if (user.status === "Pending") {
       return res.status(403).json({ message: "User is not verification" });
     }
