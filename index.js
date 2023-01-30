@@ -1,7 +1,6 @@
 import express from "express";
 const app = express();
 import product from "./api/product.js";
-
 app.use(express.json({ extended: false }));
 
 app.use("/api/product", product);
