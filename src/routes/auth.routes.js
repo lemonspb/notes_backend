@@ -6,5 +6,7 @@ const router = express();
 router.post("/register", validate(registerRules), register);
 router.post("/login", validate(loginRules), login);
 router.get("/verificate/:confirmationCode", verificate);
-
+router.get("/misha", (req, res) => {
+  res.status(200).json({ message: "хрюмпи" });
+});
 export default router;
