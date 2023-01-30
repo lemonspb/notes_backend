@@ -1,6 +1,6 @@
 import express from "express";
 const app = express();
-import product from "./src/api/product.js";
+import product from "./api/product.js";
 
 app.use(express.json({ extended: false }));
 
