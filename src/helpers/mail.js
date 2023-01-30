@@ -7,28 +7,28 @@ import env from "../helpers/env.js";
 
 async function getTransporter() {
   let transporter;
-  if (process.env.NODE_ENV !== "production") {
-    const testAccount = await createTestAccount();
-    transporter = createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
-      secure: false,
-      auth: {
-        user: testAccount.user,
-        pass: testAccount.pass,
-      },
-    });
-  } else {
-    transporter = createTransport({
-      host: env.SMTP_HOST,
-      port: env.SMTP_PORT,
-      secure: false,
-      auth: {
-        user: env.SMTP_USER,
-        pass: env.SMTP_PASSWORD,
-      },
-    });
-  }
+  // if (process.env.NODE_ENV !== "production") {
+  //   const testAccount = await createTestAccount();
+  //   transporter = createTransport({
+  //     host: "smtp.ethereal.email",
+  //     port: 587,
+  //     secure: false,
+  //     auth: {
+  //       user: testAccount.user,
+  //       pass: testAccount.pass,
+  //     },
+  //   });
+  // } else {
+  transporter = createTransport({
+    host: env.SMTP_HOST,
+    port: env.SMTP_PORT,
+    secure: false,
+    auth: {
+      user: env.SMTP_USER,
+      pass: env.SMTP_PASSWORD,
+    },
+  });
+  // }
   return transporter;
 }
 
