@@ -21,7 +21,7 @@ const register = async (req, res, next) => {
       password: hashedPassword,
       confirmationCode: confirmationCode,
     });
-    sendMail({
+    await sendMail({
       subject: "Успешная регистрация",
       html: `<div>Чтобы завершить регистрацию  
       <a href="${APP_URL}/confirm/${confirmationCode}">${APP_URL}/confirm/${confirmationCode}</a></div>`,

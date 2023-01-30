@@ -5,7 +5,7 @@ import {
 } from "nodemailer";
 import env from "../helpers/env.js";
 
-async function getTransporter() {
+function getTransporter() {
   let transporter;
   // if (process.env.NODE_ENV !== "production") {
   //   const testAccount = await createTestAccount();
