@@ -2,11 +2,10 @@
   "name": "notes-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
     "test": "jest --forceExit --detectOpenHandles"
   },
   "repository": {
